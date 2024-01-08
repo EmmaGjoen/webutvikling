@@ -1,0 +1,87 @@
+.nav-bar-parent {
+  display: flex;
+  flex-direction: row;
+  gap: 0.9375rem;
+  justify-content: right;
+  margin-right: 0.625rem;
+  align-items: center;
+}
+
+.nav-bar-item {
+  box-sizing: border-box;
+  height: 3.75rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  user-select: none;
+}
+
+.nav-bar-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.125rem;
+  transition: width 0.3s ease;
+}
+
+.nav-bar-item:hover::before {
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+.light {
+  color: black;
+  &::before {
+    background-color: black;
+  }
+}
+
+.dark {
+  color: white;
+  &::before {
+    background-color: white;
+  }
+}
+
+.logo {
+  margin-top: 0.625rem;
+  margin-left: 0.625rem;
+}
+
+.nav-bar-parent-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 40.125rem) {
+  .nav-bar-parent-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.toggle-theme-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  user-select: none;
+  align-items: center;
+  margin-left: 0.625rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.toggle-theme-button:hover {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}

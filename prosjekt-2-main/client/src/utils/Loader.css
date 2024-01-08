@@ -1,0 +1,87 @@
+.loader {
+  width: 2rem;
+  height: 5.625rem;
+  display: block;
+  margin: 1.25rem auto;
+  position: relative;
+  border-radius: 50% 50% 0 0;
+  border-bottom: 0.625rem solid #ff3d00;
+  background-color: #fff;
+  background-image: radial-gradient(ellipse at center, #fff 34%, #ff3d00 35%, #ff3d00 54%, #fff 55%),
+    linear-gradient(#ff3d00 0.625rem, transparent 0);
+  background-size: 1.75rem 1.75rem;
+  background-position:
+    center 1.25rem,
+    center 0.125rem;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: animloaderBack 1s linear infinite alternate;
+}
+
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  box-shadow: 0rem 0.9375rem #ff3d00 inset;
+  top: 4.1875rem;
+}
+
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 2.125rem;
+  height: 2.125rem;
+  top: 112%;
+  background: radial-gradient(
+    ellipse at center,
+    #ffdf00 8%,
+    rgba(249, 62, 0, 0.6) 24%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border-radius: 50% 50% 0;
+  background-repeat: no-repeat;
+  background-position: -2.75rem -2.75rem;
+  background-size: 6.25rem 6.25rem;
+  box-shadow: 0.25rem 0.25rem 0.75rem 0rem rgba(255, 61, 0, 0.5);
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloaderBack {
+  0%,
+  30%,
+  70% {
+    transform: translateY(0rem);
+  }
+
+  20%,
+  40%,
+  100% {
+    transform: translateY(-0.3125rem);
+  }
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 0.25rem 0.25rem 0.75rem 0.125rem rgba(255, 61, 0, 0.75);
+    width: 2.125rem;
+    height: 2.125rem;
+    background-position: -2.75rem -2.75rem;
+    background-size: 6.25rem 6.25rem;
+  }
+
+  100% {
+    box-shadow: 0.125rem 0.125rem 0.5rem 0rem rgba(255, 61, 0, 0.5);
+    width: 1.875rem;
+    height: 1.75rem;
+    background-position: -2.25rem -2.25rem;
+    background-size: 5rem 5rem;
+  }
+}

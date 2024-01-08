@@ -1,0 +1,10 @@
+header {
+  position: relative;
+  top: 0;
+  z-index: 999;
+  margin-bottom: 0.625rem;
+}
+
+main {
+  padding: 0;
+}

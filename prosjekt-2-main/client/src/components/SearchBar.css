@@ -1,0 +1,57 @@
+.searchbar-container {
+  display: flex;
+  width: fit-content;
+  max-width: 21.25rem;
+  height: 3.125rem;
+  border-bottom: 0.0625rem solid black;
+  align-items: center;
+  &.dark {
+    border-bottom: 0.0625rem solid white;
+  }
+}
+
+.searchbar-input {
+  background-color: transparent;
+  font-size: 1rem;
+  border: none;
+  padding: 0.625rem;
+  width: 18.75rem;
+  color: black;
+  &::placeholder {
+    color: gray;
+    user-select: none;
+  }
+  &.dark {
+    color: white;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+@media (max-width: 31.25rem) {
+  .searchbar-container {
+    width: 18.75rem;
+  }
+}
+
+.clear-button {
+  cursor: pointer;
+  &.dark {
+    color: white;
+  }
+}
+
+.search-icon {
+  transition: ease-in-out 0.15s;
+  &.dark {
+    color: white;
+  }
+  & > span {
+    pointer-events: none;
+  }
+  &:hover {
+    cursor: pointer;
+    scale: 1.2;
+  }
+}
